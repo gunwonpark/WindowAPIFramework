@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "WindowApiTest.h"
+#include "CCore.h"
 
 #define MAX_LOADSTRING 100
 
@@ -39,6 +40,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
+    if (FAILED(CCore::GetInstance()->init(g_hWnd, { 1280, 768 }))){
+        MessageBox(g_hWnd, L"CCore Init Failed", L"Error", MB_OK);
+        return FALSE;
+    }
+
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINDOWAPITEST));
 
     MSG msg;
@@ -62,6 +68,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		else
 		{
 			// 게임 로직
+            CCore::GetInstance()->update();
 		}
         
     }
@@ -122,6 +129,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    g_hWnd = hWnd;
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+
+
 
    return TRUE;
 }
