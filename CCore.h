@@ -1,14 +1,7 @@
 #pragma once
 class CCore
 {
-public:
-	static CCore* GetInstance() {
-		static CCore instance;
-		return &instance;
-	}
-private:
-	CCore();
-	~CCore();
+SINGLETON(CCore)
 
 private:
 	HWND m_hWnd;
