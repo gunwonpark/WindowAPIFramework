@@ -17,6 +17,9 @@
     <Filter Include="Engine\02.core">
       <UniqueIdentifier>{9729b935-59a0-434f-8f2c-d0dd92a4c786}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03.manager">
+      <UniqueIdentifier>{83a023b0-1587-4bc7-8fc8-a64574f3f65b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCore.h">
@@ -34,6 +37,13 @@
     <ClInclude Include="WindowApiTest.h">
       <Filter>default</Filter>
     </ClInclude>
+    <ClInclude Include="CTimemanager.h">
+      <Filter>Engine\03.manager</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="define.h">
+      <Filter>Engine\01.header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCore.cpp">
@@ -41,6 +51,9 @@
     </ClCompile>
     <ClCompile Include="WindowApiTest.cpp">
       <Filter>default</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimemanager.cpp">
+      <Filter>Engine\03.manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
